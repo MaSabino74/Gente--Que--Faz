@@ -1,0 +1,463 @@
+/*Basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #DBDBDB;
+    color: #333;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Header styles*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #D4D4D4;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #556;
+}
+
+/*hero Section*/
+
+/* Hero Section */
+.hero {
+    background: url('../img/diversidade-e-inclusao.jpg') no-repeat center center / cover;
+    font: bold larger/1.5 Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    padding: 4rem 2rem;
+    color: #F0B13B;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.section-projects {
+    padding: 60px 20px;
+    background-color: #DBDBDB;
+    ;
+    text-align: center;
+}
+
+.projects-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== Botões laterais ===== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.carousel-btn--prev {
+    left: 15px;
+}
+
+.carousel-btn--next {
+    right: 15px;
+}
+
+/* ===== Indicadores ===== */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 85%;
+}
+
+.carousel-caption h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    margin: 3px 0 0;
+    font-size: 0.85rem;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.indicator:hover {
+    background-color: #999;
+    transform: scale(1.1);
+}
+
+.indicator.active {
+    background-color: #333;
+}
+
+/* Horta Banner Section */
+.horta-banner {
+    background: url('../img/horta\ _1.jpg') no-repeat center center / cover;
+    font: bold larger/1.5 Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    padding: 4rem 2rem;
+    color: #F0B13B;
+}
+
+.horta-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.horta-banner p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.garden-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Container Principal - Layout Flexbox para os cards */
+.garden-container {
+    display: flex;
+    /* Faz com que os cards quebrem para a próxima linha em telas menores */
+    flex-wrap: wrap;
+    /* Distribui o espaço entre os cards */
+    justify-content: space-around;
+    gap: 20px;
+    /* Espaço entre os cards */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    /* Limita a largura para centralizar */
+}
+
+/* Estilos de cada Card Individual */
+.garden-card {
+    flex: 0 1 calc(33.333% - 13.333px);
+    min-width: 300px;
+    /* Garante que o card não fique muito estreito */
+    height: auto;
+    /* Altura automática para se ajustar ao conteúdo */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Garante que a imagem fique dentro do border-radius */
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Efeito Hover: Box Shadow e Escala (para um efeito 3D sutil) */
+.garden-card:hover {
+    /* Sombra mais pronunciada ao interagir */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    /* Aumenta ligeiramente o card */
+    transform: translateY(-5px) scale(1.02);
+    cursor: pointer;
+}
+/* Estilos da Imagem */
+.garden-card img {
+    width: 100%;
+    /* Ocupa 100% da largura do card */
+    height: 500px;
+    /* Altura fixa para manter a consistência visual */
+    object-fit: cover;
+    /* Garante que a imagem preencha o espaço sem distorcer */
+    display: block;
+}
+/* Estilos da Legenda */
+.garden-card figcaption {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #555;
+    background-color: #f7f7f7;
+    border-top: 1px solid #eee;
+}
+/* depoimentos-section */
+.depoimentos-section {
+    padding: 40px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.depoimentos-section h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+}
+
+.testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;/* Adicione esta linha */
+    gap: 20px;/* Espaço entre os cards */
+    flex-wrap: wrap;
+}
+
+.depoimento-card {
+    flex: 0 0 100%;/* Um card por linha */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);/* Border-shadow suave */
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s, transform 0.3s;/* Suaviza hover */
+}
+
+.depoimento-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    /* Sombra mais forte no hover */
+    transform: translateY(-5px) scale(1.02); /* Efeito de elevação */
+}
+
+.stars {
+    color: gold;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.depoimento-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.depoimento-card span {
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+}
+
+/* Estilo principal para criar as 3 colunas no footer */
+footer {
+    display: flex;/* Habilita o Flexbox */
+    justify-content: space-around;/* Distribui o espaço entre as colunas */
+    align-items: flex-start;/* Alinha o conteúdo das colunas no topo */
+    padding: 20px;
+    background-color: #333;/* Exemplo de cor de fundo */
+    color: #fff;/* Exemplo de cor do texto */
+}
+/* Estilos para as colunas */
+.coluna-1,
+.coluna-2,
+.coluna-3 {
+    /* Define que todas as colunas tenham o mesmo peso de largura */
+    flex: 1;
+    /* Adiciona um espaço para não ficarem coladas */
+    margin: 10px 15px;
+    font-size: small;
+}
+
+.coluna-1 {
+    flex: 1;
+    margin-top: 45px;
+    font-size: small;
+}
+
+/* Estilos para o bloco das Redes Sociais (Coluna 3) */
+.social-media {
+    display: flex;
+    flex-direction: column; /* Faz com que os itens fiquem um sobre o outro */
+    align-items: center; /* Centraliza os ícones horizontalmente */
+    gap: 10px; /* Espaço entre os ícones */
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px; /* Remove a margem esquerda que estava inline no HTML original */
+    margin: 0;
+}
+
+.social-media:hover img {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    transition: transform 0.3s;/* Animação suave */
+}
+/* Ajustes de tipografia se necessário */
+footer h3 {
+    font-size: 1em;/* Tamanho da fonte */
+    margin-bottom: 5px; /* Espaço entre as linhas de informação */
+}
+
+footer h3 span {
+    font-weight: normal; /* Deixa o texto do span normal, se for o caso */
+}
+
+/* Estilo para a informação do desenvolvedor na Coluna 2 */
+.coluna-2 small {
+    display: block;/* Garante que fique em uma nova linha */
+    margin-top: 10px;
+}
+/* Floating WhatsApp Button */
+.whatsapp-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    position: fixed;
+    right: 10px;
+    z-index: 9999;
+    bottom: 10px;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    font-size: 1rem;
+    padding: 1em;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+}

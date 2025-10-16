@@ -1,0 +1,21 @@
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .carousel-slide img {
+    height: 300px;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-btn {
+    font-size: 1.2rem;
+  }
+}

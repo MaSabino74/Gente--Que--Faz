@@ -413,6 +413,63 @@ footer {
     transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
     transition: transform 0.3s;/* Animação suave */
 }
+
+.mapa-section {
+    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* Seção de Localização */
+.localizacao-section {
+    padding: 40px 20px;
+    background-color: #ffffff; /* Fundo claro para o mapa se destacar */
+    text-align: center; /* Centraliza o H2/H3 */
+}
+
+/* Centraliza o Título */
+.titulo-centralizado {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2em;
+}
+
+/* Contêiner para centralizar o mapa */
+.mapa-container {
+    display: flex;
+    justify-content: center; /* Centraliza o iframe horizontalmente */
+    max-width: 100%; /* Garante que não ultrapasse a largura da tela */
+}
+
+/* Estilização do Iframe do Mapa */
+.mapa-iframe {
+    /* Largura e altura padrão (ajustável) */
+    width: 1000px; 
+    height: 400px;
+    max-width: 100%; /* Essencial para responsividade em telas menores */
+    display: block; /* Remove possíveis margens extras */
+    
+    /* Efeitos Visuais */
+    border-radius: 15px; /* Border Radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+    
+    /* Transição suave para o efeito hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito Hover (Interação) */
+.mapa-iframe:hover {
+    transform: translateY(-5px); /* Move o mapa ligeiramente para cima */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+/* Responsividade Básica: Ajusta o tamanho do mapa em telas muito pequenas */
+@media (max-width: 850px) {
+    .mapa-iframe {
+        height: 350px;
+    }
+}
 /* Ajustes de tipografia se necessário */
 footer h3 {
     font-size: 1em;/* Tamanho da fonte */

@@ -187,6 +187,16 @@
       </div>
     </div>
   </section>
+        <section class="localizacao-section">
+          <h2 class="titulo-centralizado">Onde Estamos</h2>
+        
+          <div class="mapa-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.0768913985167!2d-46.88725802377884!3d-23.32759887856426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf1d1c47941b1d%3A0xc023c7143e1d1d8!2sR.%20Barueri%2C%20650%20-%20Guaturinho%2C%20Cajamar%20-%20SP%2C%2007756-625!5e0!3m2!1spt-BR!2sbr!4v1699900000000!5m2!1spt-BR!2sbr"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" class="mapa-iframe"></iframe>
+          </div>
+        </section>
 
   <footer>
     <div class="coluna-1">
@@ -275,6 +285,15 @@
 
     showSlide(currentIndex);
     startAutoSlide();
+
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('nav');
+
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    }
   </script>
 </body>
 </html>

@@ -44,5 +44,5 @@ Além disso, conta com uma **Horta Comunitária** que promove sustentabilidade, 
 ## 👨‍💻 Desenvolvedor
 **Marcos Sabino**  
 - 🔗 [GitHub](https://github.com/MaSabino74)  
-- 🔗 [LinkedIn](www.linkedin.com/in/marcos-sabino-dev)  
+- 🔗 [LinkedIn](www.linkedin.com/in/marcos-sabino-dev)
 

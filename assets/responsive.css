@@ -2,9 +2,7 @@
 /* RESPONSIVE.CSS */
 /* Aplica-se a telas de tablets para baixo (max-width: 1024px) */
 /* ========================================================== */
-
 /* --- 1. Menu Hambúrguer (Header) --- */
-/* Oculta o botão do hambúrguer em telas grandes */
 .menu-toggle {
     display: none; 
     font-size: 2rem;
@@ -12,29 +10,28 @@
     color: black;
 }
 
+/* --- Telas até 1024px (tablets e notebooks pequenos) --- */
 @media (max-width: 1024px) {
-    /* Mostra o botão do hambúrguer */
     .menu-toggle {
         display: block; 
     }
 
-    /* Esconde o menu de navegação e ajusta o Header */
     header {
         padding: 1rem;
     }
 
     nav {
-        /* Configuração inicial do menu lateral */
-        display: none; /* Esconde o menu por padrão */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Abaixo do header */
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: #D4D4D4; /* Cor de fundo do Header */
+        background-color: #D4D4D4;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         z-index: 999;
         padding: 10px 0;
+        transition: all 0.3s ease;
     }
 
     nav a {
@@ -43,114 +40,123 @@
         text-align: left;
     }
 
-    /* Estado ativo para ser controlado por JavaScript */
     nav.active {
         display: flex;
     }
 }
 
-/* --- 2. Ajustes de Tamanho Geral --- */
-@media (max-width: 768px) {
-    /* Reduz o padding do body */
+/* --- 2. Ajustes gerais e Hero Section (até 992px) --- */
+@media (max-width: 992px) {
     body {
         padding: 10px;
     }
 
-    /* Hero Section */
     .hero, .horta-banner {
-        height: 50vh;
+        height: 60vh;
         padding: 3rem 1rem;
+        text-align: center;
     }
+
     .hero h2, .horta-banner h2 {
         font-size: 2rem;
     }
+
     .hero p, .horta-banner p {
         font-size: 1rem;
     }
 
-    /* Carousel Principal */
     .carousel-slide img {
-        height: 350px; /* Reduz a altura da imagem principal */
+        height: 350px;
+        object-fit: cover;
+        width: 100%;
     }
-}
 
-/* --- 3. Cards da Horta (2 por linha ou 1 por linha) --- */
-@media (max-width: 992px) {
-    /* 2 Cards por linha */
+    /* Cards da Horta — 2 por linha */
     .garden-card {
-        /* (100% - 1 lacuna de 20px) / 2 = 50% - 10px */
-        flex: 0 1 calc(50% - 10px); 
-        min-width: unset; /* Remove min-width fixo para permitir o ajuste */
+        flex: 0 1 calc(50% - 10px);
+        min-width: unset;
     }
 }
 
-@media (max-width: 600px) {
-    /* 1 Card por linha (Empilha) */
-    .garden-container {
-        gap: 15px;
-    }
-    .garden-card {
-        flex: 0 1 100%; /* 100% da largura */
-    }
-    .garden-card img {
-        height: 200px; /* Reduz a altura para celular */
-    }
-}
-
-/* --- 4. Footer (Empilhamento) --- */
+/* --- 3. Ajustes para telas pequenas (até 768px) --- */
 @media (max-width: 768px) {
+    /* Footer empilhado */
     footer {
-        flex-direction: column; /* Empilha as 3 colunas */
-        align-items: center; /* Centraliza o conteúdo */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         padding: 20px 10px;
     }
 
-    /* Redefine as colunas para ocupar a largura total */
     .coluna-1, .coluna-2, .coluna-3 {
         flex: 0 0 100%;
         margin: 10px 0;
         padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    /* Remove a borda do último item */
+
     .coluna-3 {
         border-bottom: none;
     }
 
-    /* Ajusta o alinhamento do social media para o centro */
     .social-media {
-        flex-direction: row; /* Coloca os ícones lado a lado em telas pequenas */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-    
-    /* Ajustes específicos de margem */
-    .coluna-1 {
-        margin-top: 10px; /* Reduz a margem desnecessária */
-    }
-}
 
-/* --- 5. Carrossel de Depoimentos (1 por visualização) --- */
-@media (max-width: 768px) {
+    /* Carousel de depoimentos */
     .carousel-container {
-        padding: 0 20px; /* Reduz o padding para deixar os botões mais próximos */
+        padding: 0 20px;
         max-width: 100%;
     }
-    
-    /* CHAVE: Altera o depoimento para mostrar 1 por vez */
+
     .depoimento-card {
-        flex: 0 0 100%; /* Ocupa 100% da largura */
-        margin-right: 0; /* Remove a margem direita */
+        flex: 0 0 100%;
+        margin-right: 0;
     }
 
-    /* Ajusta a posição dos botões para o novo padding */
-    .prev-btn {
-        left: 0;
+    .prev-btn { left: 0; }
+    .next-btn { right: 0; }
+}
+
+/* --- 4. Mobile (até 600px) --- */
+@media (max-width: 600px) {
+    /* Cards — 1 por linha */
+    .garden-container {
+        gap: 15px;
     }
 
-    .next-btn {
-        right: 0;
+    .garden-card {
+        flex: 0 1 100%;
+    }
+
+    .garden-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Botão do WhatsApp */
+    .whatsapp-btn-container {
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        font-size: 0;
+        border-radius: 50%;
+    }
+
+    .whatsapp-icon {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+    }
+
+    .whatsapp-btn span {
+        display: none;
     }
 }

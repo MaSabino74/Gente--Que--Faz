@@ -38,7 +38,10 @@ nav {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-
+}
+.menu-toggle {
+    display: none; /* <-- Aqui deve ser 'none' para telas grandes */
+    /* ... outros estilos ... */
 }
 
 nav a {
@@ -491,9 +494,9 @@ footer h3 span {
     justify-content: center;
     margin-top: 2rem;
     position: fixed;
-    right: 10px;
+    right: 15px;
     z-index: 9999;
-    bottom: 10px;
+    bottom: 15px;
 }
 
 .whatsapp-btn {
@@ -506,7 +509,6 @@ footer h3 span {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     transition: background-color 0.3s ease;
 }
 
@@ -515,6 +517,6 @@ footer h3 span {
 }
 
 .whatsapp-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }

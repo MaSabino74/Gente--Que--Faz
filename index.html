@@ -225,75 +225,105 @@
       <a href="https://wa.me/5511973436426?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Projeto%20Gente%20Que%20Faz."
         target="_blank" class="whatsapp-btn">
         <img src="./img/WhatsApp.svg.png" alt="WhatsApp Logo" class="whatsapp-icon">
-        Fale conosco
+        
       </a>
     </div>
   </footer>
+<script>
+// ======== CARROSSEL DE IMAGENS / DEPOIMENTOS ========
 
+// Seleciona os elementos (usa querySelectorAll para lidar bem com múltiplos carrosséis, se houver)
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.carousel-btn--prev');
+const nextButton = document.querySelector('.carousel-btn--next');
+const indicators = Array.from(document.querySelectorAll('.indicator'));
 
-  <script>
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-btn--prev');
-    const nextButton = document.querySelector('.carousel-btn--next');
-    const indicators = Array.from(document.querySelectorAll('.indicator'));
+let currentIndex = 0;
+let autoSlideInterval = null;
 
-    let currentIndex = 0;
-    let autoSlideInterval;
+// Exibe o slide correspondente ao índice atual
+function showSlide(index) {
+  if (!slides.length) return; // Evita erro caso não existam slides
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      indicators.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-    }
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
 
-    function moveNext() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
+  indicators.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
 
-    function movePrev() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
+// Próximo slide
+function moveNext() {
+  if (!slides.length) return;
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
 
-    nextButton.addEventListener('click', moveNext);
-    prevButton.addEventListener('click', movePrev);
+// Slide anterior
+function movePrev() {
+  if (!slides.length) return;
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+}
 
-    indicators.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentIndex = index;
-        showSlide(currentIndex);
-      });
-    });
+// Eventos dos botões de navegação
+if (nextButton) nextButton.addEventListener('click', moveNext);
+if (prevButton) prevButton.addEventListener('click', movePrev);
 
-    // Autoplay
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(moveNext, 5000);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(autoSlideInterval);
-    }
-
-    slides.forEach(slide => {
-      slide.addEventListener('mouseenter', stopAutoSlide);
-      slide.addEventListener('mouseleave', startAutoSlide);
-    });
-
+// Eventos nos indicadores (bolinhas)
+indicators.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
     showSlide(currentIndex);
-    startAutoSlide();
+  });
+});
 
-    const menuToggle = document.getElementById('menuToggle');
-    const nav = document.querySelector('nav');
+// ======== AUTOPLAY ========
+function startAutoSlide() {
+  if (!autoSlideInterval && slides.length > 1) {
+    autoSlideInterval = setInterval(moveNext, 5000);
+  }
+}
 
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    }
-  </script>
+function stopAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
+}
+
+// Pausa o autoplay quando o mouse está sobre o slide
+slides.forEach(slide => {
+  slide.addEventListener('mouseenter', stopAutoSlide);
+  slide.addEventListener('mouseleave', startAutoSlide);
+});
+
+// Inicia
+showSlide(currentIndex);
+startAutoSlide();
+
+
+// ======== MENU HAMBÚRGUER ========
+const menuToggle = document.getElementById('menu-toggle'); // Corrigido: id deve ser "menu-toggle"
+const nav = document.querySelector('nav');
+
+// Evita erro se elementos não existirem
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+
+  // Fecha o menu ao clicar em um link (boa prática em mobile)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+    });
+  });
+}
+
+</script>
+
 </body>
 </html>

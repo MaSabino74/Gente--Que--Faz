@@ -1,6 +1,6 @@
 # 🌱 Projeto Gente Que Faz
 
-<img src="./img/Gente_Que_Faz-removebg.png" width="150px" alt="Logo Projeto Gente Que Faz">
+<img src="./img/Gente_Que_Faz.png" width="150px" alt="Logo Projeto Gente Que Faz">
 
 ## 📖 Sobre o Projeto
 O **Projeto Gente Que Faz** nasceu em 2015 com o propósito de transformar vidas por meio de ações solidárias.  
